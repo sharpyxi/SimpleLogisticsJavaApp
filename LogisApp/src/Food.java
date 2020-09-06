@@ -12,6 +12,16 @@ public class Food {
     public Food(String foodName) {
         this.foodName = foodName;
     }
+
+    @Override
+    public String toString() {
+        return "Food{" +
+                "foodName='" + foodName + '\'' +
+                ", volume=" + volume +
+                ", weight=" + weight +
+                ", expirationDate=" + expirationDate +
+                '}';
+    }
 }
 
 

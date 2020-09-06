@@ -25,4 +25,12 @@ public class Shop {
     public void setShopLocation(Location shopLocation) {
         this.shopLocation = shopLocation;
     }
+
+    @Override
+    public String toString() {
+        return "Shop{" +
+                "shopName='" + shopName + '\'' +
+                ", shopLocation=" + shopLocation +
+                '}';
+    }
 }

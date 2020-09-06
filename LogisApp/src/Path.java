@@ -35,4 +35,13 @@ public class Path {
     public void setDistance(int distance) {
         this.distance = distance;
     }
+
+    @Override
+    public String toString() {
+        return "Path{" +
+                "shop=" + shop +
+                ", warehouse=" + warehouse +
+                ", distance=" + distance +
+                '}';
+    }
 }

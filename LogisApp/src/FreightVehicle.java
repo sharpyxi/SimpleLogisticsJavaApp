@@ -48,5 +48,15 @@ public class FreightVehicle {
     public void setAvgSpeed(float avgSpeed) {
         this.avgSpeed = avgSpeed;
     }
+
+    @Override
+    public String toString() {
+        return "FreightVehicle{" +
+                "licencePLate='" + licencePLate + '\'' +
+                ", volume=" + volume +
+                ", maxWeight=" + maxWeight +
+                ", avgSpeed=" + avgSpeed +
+                '}';
+    }
 }
 
