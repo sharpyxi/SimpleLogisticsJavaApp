@@ -1,12 +1,14 @@
-public class FreightVehicle {
+import java.util.List;
+
+public abstract class FreightVehicle {
     String licencePLate;
     int volume;
     int maxWeight;
     float avgSpeed;
+    List<Food> cargo;
 
     public float returnTravelTime(Path path) {
-        float travelTime = path.distance/avgSpeed/24;
-        return travelTime;
+        return path.distance/avgSpeed/24;
     }
 
     public FreightVehicle() {
@@ -14,6 +16,13 @@ public class FreightVehicle {
 
     public FreightVehicle(String licencePLate, float avgSpeed) {
         this.licencePLate = licencePLate;
+        this.avgSpeed = avgSpeed;
+    }
+
+    public FreightVehicle(String licencePLate, int volume, int maxWeight, float avgSpeed) {
+        this.licencePLate = licencePLate;
+        this.volume = volume;
+        this.maxWeight = maxWeight;
         this.avgSpeed = avgSpeed;
     }
 
@@ -58,5 +67,20 @@ public class FreightVehicle {
                 ", avgSpeed=" + avgSpeed +
                 '}';
     }
+
+    public void loadFood(Food food) {
+        cargo.add(food);
+    }
+
+    public void unloadFood(Food food) {
+        cargo.remove(food);
+    }
+
+    public double returnOccupancy() {
+        return cargo.size()/volume;
+    }
+
+    public abstract int returnCapacity();
+
 }
 

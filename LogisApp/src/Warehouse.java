@@ -1,18 +1,25 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public class Warehouse {
     String warehouseName;
     Location warehouseLocation;
-    Food food;
     int capacity;
-    ArrayList<Food> inventory;
+    Food food;
+    List<Food> inventory;
+
 
     public Warehouse() {
     }
 
-    public Warehouse(String warehouseName, Location warehouseLocation) {
+    private Warehouse(String warehouseName, Location warehouseLocation) {
         this.warehouseName = warehouseName;
         this.warehouseLocation = warehouseLocation;
+    }
+
+    public Warehouse(String warehouseName, Location warehouseLocation, int capacity) {
+        this.warehouseName = warehouseName;
+        this.warehouseLocation = warehouseLocation;
+        this.capacity = capacity;
     }
 
     public String getWarehouseName() {
@@ -50,15 +57,13 @@ public class Warehouse {
         inventory.remove(food);
     }
 
-    public int returnFoodQuantity(Food food) {
+    public int returnFoodQuantity() {
         return inventory.size();
     }
 
     public boolean foodExists (Food food) {
-        boolean containsFood = false;
-        if (inventory.contains(food)) {
-            containsFood = true;
-        }
+        boolean containsFood;
+        containsFood = inventory.contains(food.foodName);
         return containsFood;
     }
 }
