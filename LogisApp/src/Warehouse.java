@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Warehouse {
@@ -5,7 +6,7 @@ public class Warehouse {
     Location warehouseLocation;
     int capacity;
     Food food;
-    List<Food> inventory;
+    List<Food> inventory = new ArrayList<>();
 
 
     public Warehouse() {
@@ -16,7 +17,7 @@ public class Warehouse {
         this.warehouseLocation = warehouseLocation;
     }
 
-    public Warehouse(String warehouseName, Location warehouseLocation, int capacity) {
+    private Warehouse(String warehouseName, Location warehouseLocation, int capacity) {
         this.warehouseName = warehouseName;
         this.warehouseLocation = warehouseLocation;
         this.capacity = capacity;
